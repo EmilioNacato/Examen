@@ -1,22 +1,42 @@
-package main.java.com.grupo2.examen.GestionModulos.model;
+package main.java.com.grupo2.examen.ControlPermisos.model;
 
 import java.io.Serializable;
 
 @Embeddable
-public class FuncionalidadPk implements Serializable{
+public class PerfilFuncionalidadPk implements Serializable{
 
     @NotNull
-    @Column(name = "COD_MODULO", nullable = false)
-    private String codeModulo;
+    @Column(name = "COD_PERFIL", nullable = false)
+    private String codePerfil;
     @NotNull
     @Column(name = "COD_FUNCIONALIDAD", nullable = false)
     private String codeFuncionalidad;
+    @NotNull
+    @Column(name = "COD_MODULO", nullable = false)
+    private String codeModulo;
 
-    public FuncionalidadPk() {
+    public PerfilFuncionalidadPk() {
     }
 
-    public FuncionalidadPk(String codeModulo, String codeFuncionalidad) {
+    public PerfilFuncionalidadPk(String codePerfil, String codeFuncionalidad, String codeModulo) {
+        this.codePerfil = codePerfil;
+        this.codeFuncionalidad = codeFuncionalidad;
         this.codeModulo = codeModulo;
+    }
+
+    public String getCodePerfil() {
+        return codePerfil;
+    }
+
+    public void setCodePerfil(String codePerfil) {
+        this.codePerfil = codePerfil;
+    }
+
+    public String getCodeFuncionalidad() {
+        return codeFuncionalidad;
+    }
+
+    public void setCodeFuncionalidad(String codeFuncionalidad) {
         this.codeFuncionalidad = codeFuncionalidad;
     }
 
@@ -28,18 +48,11 @@ public class FuncionalidadPk implements Serializable{
         this.codeModulo = codeModulo;
     }
 
-    public String getCodeFuncionalidad() {
-        return codeFuncionalidad;
-    }
-
-    public void setCodeFuncionalidad(String codeFuncionalidad) {
-        this.codeFuncionalidad = codeFuncionalidad;
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
+        result = prime * result + ((codePerfil == null) ? 0 : codePerfil.hashCode());
         result = prime * result + ((codeFuncionalidad == null) ? 0 : codeFuncionalidad.hashCode());
         result = prime * result + ((codeModulo == null) ? 0 : codeModulo.hashCode());
         return result;
@@ -53,7 +66,12 @@ public class FuncionalidadPk implements Serializable{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        FuncionalidadPk other = (FuncionalidadPk) obj;
+        PerfilFuncionalidadPk other = (PerfilFuncionalidadPk) obj;
+        if (codePerfil == null) {
+            if (other.codePerfil != null)
+                return false;
+        } else if (!codePerfil.equals(other.codePerfil))
+            return false;
         if (codeFuncionalidad == null) {
             if (other.codeFuncionalidad != null)
                 return false;
@@ -69,8 +87,12 @@ public class FuncionalidadPk implements Serializable{
 
     @Override
     public String toString() {
-        return "FuncionalidadPk [codeModulo=" + codeModulo + ", codeFuncionalidad=" + codeFuncionalidad + "]";
+        return "PerfilFuncionalidadPk [codePerfil=" + codePerfil + ", codeFuncionalidad=" + codeFuncionalidad
+                + ", codeModulo=" + codeModulo + "]";
     }
 
     
+
+    
+
 }
