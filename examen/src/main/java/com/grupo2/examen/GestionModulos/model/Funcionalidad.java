@@ -14,7 +14,7 @@ public class Funcionalidad implements Serializable{
     @NotNull
     @ManyToOne  
     @JoinColumn(name = "COD_MODULO", referencedColumnName = "COD_MODULO", insertable = false, updatable = false)
-    private Comision codeModulo;
+    private String codeModulo;
     @NotNull
     @Column(name = "URL_PRINCIPAL", length = 200, nullable = false)
     private String urlPrincipal;
@@ -42,11 +42,11 @@ public class Funcionalidad implements Serializable{
         this.id = id;
     }
 
-    public Comision getCodeModulo() {
+    public String getCodeModulo() {
         return codeModulo;
     }
 
-    public void setCodeModulo(Comision codeModulo) {
+    public void setCodeModulo(String codeModulo) {
         this.codeModulo = codeModulo;
     }
 

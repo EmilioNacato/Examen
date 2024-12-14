@@ -18,6 +18,7 @@ public class Usuario implements Serializable{
     @Column(name = "COD_USUARIO", nullable = false, length = 30)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String code;
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "COD_PERFIL", referencedColumnName = "COD_PERFIL", insertable = false, updatable = false)
     private Comision perfil;

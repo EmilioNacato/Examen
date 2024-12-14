@@ -12,7 +12,7 @@ public class Modulo implements Serializable{
     @NotNull
     @Column(name = "COD_MODULO", nullable = false, length = 16)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String code;
+    private String codeModulo;
     @NotNull
     @Column(name = "NOMBRE", length = 50, nullable = false)
     private String nombre;
@@ -26,16 +26,16 @@ public class Modulo implements Serializable{
     public Modulo() {
     }
 
-    public Modulo(String code) {
-        this.code = code;
+    public Modulo(String codeModuloe) {
+        this.codeModulo = codeModulo;
     }
 
-    public String getCode() {
-        return code;
+    public String getcodeModulo() {
+        return codeModulo;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setCode(String codeModulo) {
+        this.codeModulo = codeModulo;
     }
 
     public String getNombre() {

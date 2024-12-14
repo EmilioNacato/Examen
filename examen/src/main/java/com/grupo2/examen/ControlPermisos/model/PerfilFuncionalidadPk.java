@@ -1,5 +1,9 @@
 package main.java.com.grupo2.examen.ControlPermisos.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.NotNull;
+
 import java.io.Serializable;
 
 @Embeddable
@@ -7,7 +11,7 @@ public class PerfilFuncionalidadPk implements Serializable{
 
     @NotNull
     @Column(name = "COD_PERFIL", nullable = false)
-    private String codePerfil;
+    private String code;
     @NotNull
     @Column(name = "COD_FUNCIONALIDAD", nullable = false)
     private String codeFuncionalidad;

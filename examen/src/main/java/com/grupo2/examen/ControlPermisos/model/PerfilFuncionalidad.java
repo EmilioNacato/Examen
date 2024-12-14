@@ -1,5 +1,11 @@
 package main.java.com.grupo2.examen.ControlPermisos.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+
 import java.io.Serializable;
 
 @Entity
@@ -21,10 +27,10 @@ public class PerfilFuncionalidad implements Serializable{
     @Column(name = "ADMITE_MODIFICACION", nullable = false)
     private Boolean admiteModificacion;
 
-    public PerfinFuncionalidad() {
+    public PerfilFuncionalidad() {
     }
 
-    public PerfinFuncionalidad(PerfilFuncionalidadPk id) {
+    public PerfilFuncionalidad(PerfilFuncionalidadPk id) {
         this.id = id;
     }
 
@@ -84,7 +90,7 @@ public class PerfilFuncionalidad implements Serializable{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        PerfinFuncionalidad other = (PerfinFuncionalidad) obj;
+        PerfinFulcionalidad other = (PerfilFuncionalidad) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
@@ -95,7 +101,7 @@ public class PerfilFuncionalidad implements Serializable{
 
     @Override
     public String toString() {
-        return "PerfinFuncionalidad [id=" + id + ", orden=" + orden + ", estado=" + estado + ", admiteCreacion="
+        return "PerfilFuncionalidad [id=" + id + ", orden=" + orden + ", estado=" + estado + ", admiteCreacion="
                 + admiteCreacion + ", admiteModificacion=" + admiteModificacion + "]";
     }
 
